@@ -1,0 +1,15 @@
+
+# Backend (Windows PowerShell)
+python -m venv .venv
+.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+
+# Set vars (exemplo)
+$env:OPENAI_API_KEY="SUA_CHAVE"
+$env:FIREBASE_CREDENTIALS_JSON="C:\caminho\service-account.json"
+$env:FIREBASE_PROJECT_ID="seu-projeto"
+$env:STRIPE_SECRET_KEY="sk_test_xxx"
+$env:STRIPE_PRICE_ID="price_xxx"
+$env:APP_SITE_URL="http://localhost:5173"
+
+uvicorn app.main:app --reload --port 8000
